@@ -2,6 +2,8 @@
 
 Aplicativo desenvolvido ultilizando React Native com Expo
 
+## 02_mais-estilos-logo-font-icones-pressable
+
 ## 01_estrutura-e-estilizacao-basica01_estrutura-e-estilizacao-basica
 
 - Remoção das imagens originais na pasta assests
