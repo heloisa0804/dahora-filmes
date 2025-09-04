@@ -3,6 +3,9 @@ import { StatusBar } from "expo-status-bar";
 import { Button, Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
+//Importando a biblioteca interna vector-icons
+import { Ionicons } from "@expo/vector-icons";
+
 export default function App() {
   const [fonteCarregada] = useFonts({
     Monoton: require("./assets/fonts/Monoton-Regular.ttf"),
@@ -22,6 +25,7 @@ export default function App() {
         </View>
         <View style={estilos.viewBotoes}>
           <Pressable style={estilos.botaoInicial}>
+            <Ionicons name="search" size={24} color="black" />
             <Text style={estilos.textoBotao}>Buscar Filmes</Text>
           </Pressable>
           <Button title="Favoritos" />
@@ -68,6 +72,8 @@ const estilos = StyleSheet.create({
     backgroundColor: "#5451ac",
     padding: 16,
     borderRadius: 8,
+    flexDirection: "row",
+    alignItems: "center",
   },
   textoBotao: {
     color: "white",
