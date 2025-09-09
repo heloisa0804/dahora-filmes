@@ -3,16 +3,20 @@ import { StatusBar } from "expo-status-bar";
 import { Button, Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
-//Importando a biblioteca interna vector-icons
+// Importando a bliblioteca interna vector-icons
 import { Ionicons } from "@expo/vector-icons";
 
 export default function App() {
+  /* Usamos o useFonts para criar uma referência para a fonte que queremos utilizar no app. */
   const [fonteCarregada] = useFonts({
     Monoton: require("./assets/fonts/Monoton-Regular.ttf"),
   });
 
+  // Se a fonte ainda não for carregada
   if (!fonteCarregada) {
-    return <Text style={{ color: "red", fontSize: 22 }}>Carregando Fonte</Text>;
+    return (
+      <Text style={{ color: "red", fontSize: 22 }}> Carregando fonte...</Text>
+    );
   }
 
   return (
@@ -24,15 +28,66 @@ export default function App() {
           <Text style={estilos.tituloApp}>Dá Hora Filmes</Text>
         </View>
         <View style={estilos.viewBotoes}>
-          <Pressable style={estilos.botaoInicial}>
-            <Ionicons name="search" size={24} color="black" />
+          <Pressable
+            style={({ pressed }) => [
+              estilos.botaoInicial,
+              pressed && { backgroundColor: "black" },
+            ]}
+          >
+            <Ionicons
+              name="search"
+              size={24}
+              color="white"
+              style={{ marginRight: 8 }}
+            />
             <Text style={estilos.textoBotao}>Buscar Filmes</Text>
           </Pressable>
-          <Button title="Favoritos" />
+
+          <Pressable
+            style={({ pressed }) => [
+              estilos.botaoInicial,
+              pressed && { backgroundColor: "black" },
+            ]}
+          >
+            <Ionicons
+              name="star"
+              size={24}
+              color="yellow"
+              style={{ marginRight: 8 }}
+            />
+            <Text style={estilos.textoBotao}>Favoritos</Text>
+          </Pressable>
         </View>
         <View style={estilos.viewRodape}>
-          <Button title="Privacidade" />
-          <Button title="Sobre" />
+          <Pressable
+            style={({ pressed }) => [
+              estilos.botaoRodape,
+              pressed && { backgroundColor: "black" },
+            ]}
+          >
+            <Ionicons
+              name="lock-closed"
+              size={18}
+              color="white"
+              style={{ marginRight: 7 }}
+            />
+            <Text style={estilos.textoRodape}>Privacidade</Text>
+          </Pressable>
+
+          <Pressable
+            style={({ pressed }) => [
+              estilos.botaoRodape,
+              pressed && { backgroundColor: "black" },
+            ]}
+          >
+            <Ionicons
+              name="information-circle"
+              size={18}
+              color="white"
+              style={{ marginRight: 7 }}
+            />
+            <Text style={estilos.textoRodape}>Sobre</Text>
+          </Pressable>
         </View>
       </SafeAreaView>
     </SafeAreaProvider>
@@ -43,7 +98,6 @@ export default function App() {
 const estilos = StyleSheet.create({
   container: {
     backgroundColor: "#fff",
-    paddingHorizontal: 20,
     flex: 1,
     justifyContent: "center",
   },
@@ -53,36 +107,55 @@ const estilos = StyleSheet.create({
     alignItems: "center",
   },
   logo: {
-    width: 128,
-    height: 128,
+    width: 150,
+    height: 150,
+    marginBottom: 10,
   },
   tituloApp: {
     fontSize: 32,
     color: "#5451a6",
     fontFamily: "Monoton",
+    textAlign: "center",
   },
   viewBotoes: {
-    backgroundColor: "#ffcc80",
     flex: 2,
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "center",
   },
   botaoInicial: {
-    backgroundColor: "#5451ac",
-    padding: 16,
-    borderRadius: 8,
+    backgroundColor: "#5451a6",
+    paddingVertical: 20,
+    paddingHorizontal: 16,
+    borderRadius: 10,
     flexDirection: "row",
     alignItems: "center",
   },
   textoBotao: {
     color: "white",
+    fontSize: 16,
   },
   viewRodape: {
-    backgroundColor: "#ef9a9a",
+    backgroundColor: "#5451a6",
     flex: 0.5,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    paddingHorizontal: 15,
+    borderRadius: 12,
+    paddingVertical: 12,
+    marginBottom: 10,
+  },
+  botaoRodape: {
+    paddingVertical: 14,
+    paddingHorizontal: 16,
+    borderRadius: 10,
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  textoRodape: {
+    color: "white",
+    fontSize: 14,
+    gap: 6,
   },
 });
