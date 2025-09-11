@@ -98,6 +98,7 @@ export default function App() {
 const estilos = StyleSheet.create({
   container: {
     backgroundColor: "#fff",
+    paddingHorizontal: 12,
     flex: 1,
     justifyContent: "center",
   },
@@ -109,19 +110,20 @@ const estilos = StyleSheet.create({
   logo: {
     width: 150,
     height: 150,
-    marginBottom: 10,
   },
   tituloApp: {
     fontSize: 32,
     color: "#5451a6",
     fontFamily: "Monoton",
     textAlign: "center",
+    marginBottom: 65,
   },
   viewBotoes: {
-    flex: 2,
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "center",
+    marginBottom: 240,
+    gap: 35,
   },
   botaoInicial: {
     backgroundColor: "#5451a6",
@@ -137,14 +139,13 @@ const estilos = StyleSheet.create({
   },
   viewRodape: {
     backgroundColor: "#5451a6",
-    flex: 0.5,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingHorizontal: 15,
-    borderRadius: 12,
+    borderRadius: 10,
+    paddingHorizontal: 7,
     paddingVertical: 12,
-    marginBottom: 10,
+    bottom: 15,
   },
   botaoRodape: {
     paddingVertical: 14,
@@ -156,6 +157,5 @@ const estilos = StyleSheet.create({
   textoRodape: {
     color: "white",
     fontSize: 14,
-    gap: 6,
   },
 });
