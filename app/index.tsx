@@ -1,37 +1,46 @@
-import { View, Text, Pressable, StyleSheet, Image } from "react-native";
+import { StatusBar } from "expo-status-bar";
+import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-
-//@ts-ignore
+import { View, Text, Image, Pressable, StyleSheet } from "react-native";
+// @ts-ignore
 import { Ionicons } from "@expo/vector-icons";
+import { Stack } from "expo-router";
 
-export default function Home() {
+export default function index() {
   return (
-    <SafeAreaView style={estilos.container}>
-      <View style={estilos.viewLogo}>
-        <Image source={require("../assets/dahora.png")} style={estilos.logo} />
-        <Text style={estilos.tituloApp}>Dá Hora Filmes</Text>
-      </View>
-      <View style={estilos.viewBotoes}>
-        <Pressable style={estilos.botaoInicial}>
-          <Ionicons name="search" size={18} color="white" />
-          <Text style={estilos.textoBotao}> Buscar Filmes</Text>
-        </Pressable>
-        <Pressable style={estilos.botaoInicial}>
-          <Ionicons name="star" size={18} color="gold" />
-          <Text style={estilos.textoBotao}> Favoritos</Text>
-        </Pressable>
-      </View>
-      <View style={estilos.viewRodape}>
-        <Pressable style={estilos.botaoRodape}>
-          <Ionicons name="lock-closed" size={18} color="white" />
-          <Text style={estilos.textoBotao}> Privacidade</Text>
-        </Pressable>
-        <Pressable style={estilos.botaoRodape}>
-          <Ionicons name="information-circle" size={18} color="white" />
-          <Text style={estilos.textoBotao}> Sobre</Text>
-        </Pressable>
-      </View>
-    </SafeAreaView>
+    <>
+      <Stack.Screen options={{ headerShown: false }} />
+      <SafeAreaView style={estilos.container}>
+        <StatusBar style="auto" />
+        <View style={estilos.viewLogo}>
+          <Image
+            source={require("../assets/dahora.png")}
+            style={estilos.logo}
+          />
+          <Text style={estilos.tituloApp}>Dá Hora Filmes</Text>
+        </View>
+        <View style={estilos.viewBotoes}>
+          <Pressable style={estilos.botaoInicial}>
+            <Ionicons name="search" size={18} color="white" />
+            <Text style={estilos.textoBotao}> Buscar Filmes</Text>
+          </Pressable>
+          <Pressable style={estilos.botaoInicial}>
+            <Ionicons name="star" size={18} color="gold" />
+            <Text style={estilos.textoBotao}> Favoritos</Text>
+          </Pressable>
+        </View>
+        <View style={estilos.viewRodape}>
+          <Pressable style={estilos.botaoRodape}>
+            <Ionicons name="lock-closed" size={18} color="white" />
+            <Text style={estilos.textoBotao}> Privacidade</Text>
+          </Pressable>
+          <Pressable style={estilos.botaoRodape}>
+            <Ionicons name="information-circle" size={18} color="white" />
+            <Text style={estilos.textoBotao}> Sobre</Text>
+          </Pressable>
+        </View>
+      </SafeAreaView>
+    </>
   );
 }
 
