@@ -1,7 +1,14 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { View, Text, Image, Pressable, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  Pressable,
+  StyleSheet,
+  Linking,
+} from "react-native";
 // @ts-ignore
 import { Ionicons } from "@expo/vector-icons";
 import { Link, Stack } from "expo-router";
@@ -9,7 +16,7 @@ import { Link, Stack } from "expo-router";
 export default function index() {
   return (
     <>
-      <Stack.Screen options={{ headerShown: false }} />
+      <Stack.Screen options={{ headerShown: false, headerTitle: "Home" }} />
       <SafeAreaView style={estilos.container}>
         <StatusBar style="auto" />
         <View style={estilos.viewLogo}>
@@ -41,10 +48,12 @@ export default function index() {
               <Text style={estilos.textoBotao}> Privacidade</Text>
             </Pressable>
           </Link>
-          <Pressable style={estilos.botaoRodape}>
-            <Ionicons name="information-circle" size={18} color="white" />
-            <Text style={estilos.textoBotao}> Sobre</Text>
-          </Pressable>
+          <Link href="/sobre" asChild>
+            <Pressable style={estilos.botaoRodape}>
+              <Ionicons name="information-circle" size={18} color="white" />
+              <Text style={estilos.textoBotao}> Sobre</Text>
+            </Pressable>
+          </Link>
         </View>
       </SafeAreaView>
     </>
