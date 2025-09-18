@@ -30,36 +30,7 @@ export default function App() {
     return <Loading />;
   }
 
-  return (
-    <SafeAreaProvider>
-      <SafeAreaView style={estilos.container}>
-        <View style={estilos.viewLogo}>
-          <Image source={require("./assets/dahora.png")} style={estilos.logo} />
-          <Text style={estilos.tituloApp}>Dá Hora Filmes</Text>
-        </View>
-        <View style={estilos.viewBotoes}>
-          <Pressable style={estilos.botaoInicial}>
-            <Ionicons name="search" size={18} color="white" />
-            <Text style={estilos.textoBotao}> Buscar Filmes</Text>
-          </Pressable>
-          <Pressable style={estilos.botaoInicial}>
-            <Ionicons name="star" size={18} color="gold" />
-            <Text style={estilos.textoBotao}> Favoritos</Text>
-          </Pressable>
-        </View>
-        <View style={estilos.viewRodape}>
-          <Pressable style={estilos.botaoRodape}>
-            <Ionicons name="lock-closed" size={18} color="white" />
-            <Text style={estilos.textoBotao}> Privacidade</Text>
-          </Pressable>
-          <Pressable style={estilos.botaoRodape}>
-            <Ionicons name="information-circle" size={18} color="white" />
-            <Text style={estilos.textoBotao}> Sobre</Text>
-          </Pressable>
-        </View>
-      </SafeAreaView>
-    </SafeAreaProvider>
-  );
+  return <SafeAreaProvider></SafeAreaProvider>;
 }
 
 /* Estilos */
