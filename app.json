@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "Dáhora-Filmes",
+    "name": "DáHora Filmes",
     "slug": "dahora-filmes",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icone.png",
-    "userInterfaceStyle": "automaticnpmn",
+    "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "splash": {
       "image": "./assets/splash-dahora.png",
@@ -27,7 +27,8 @@
       "edgeToEdgeEnabled": true
     },
     "plugins": [
-      "expo-font"
+      "expo-font",
+      "expo-router"
     ]
   }
 }
