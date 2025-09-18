@@ -33,7 +33,6 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={estilos.container}>
-        <StatusBar style="auto" />
         <View style={estilos.viewLogo}>
           <Image source={require("./assets/dahora.png")} style={estilos.logo} />
           <Text style={estilos.tituloApp}>Dá Hora Filmes</Text>
@@ -64,54 +63,3 @@ export default function App() {
 }
 
 /* Estilos */
-const estilos = StyleSheet.create({
-  container: {
-    backgroundColor: "#fff",
-    paddingHorizontal: 20,
-    flex: 1,
-    justifyContent: "center",
-  },
-  viewLogo: {
-    flex: 3,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  logo: {
-    width: 128,
-    height: 128,
-  },
-  tituloApp: {
-    fontSize: 32,
-    color: "#5451a6",
-    fontFamily: "Monoton",
-  },
-  viewBotoes: {
-    flex: 2,
-    flexDirection: "row",
-    justifyContent: "space-evenly",
-    alignItems: "flex-start",
-  },
-  botaoInicial: {
-    backgroundColor: "#5451a6",
-    padding: 16,
-    borderRadius: 8,
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  textoBotao: {
-    color: "white",
-  },
-  viewRodape: {
-    backgroundColor: "#5451a6",
-    flex: 0.5,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    borderRadius: 8,
-  },
-  botaoRodape: {
-    padding: 16,
-    flexDirection: "row",
-    alignItems: "center",
-  },
-});
