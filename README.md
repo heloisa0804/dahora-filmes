@@ -4,6 +4,8 @@ Aplicativo desenvolvido utilizando React Native com Expo.
 
 ---
 
+## 05_uso-da-api-com-config-env
+
 ## 04_telas-basicas-de-busca-e-resultados
 
 - Criação da versão básica das telas `Busca` e `Resultados`
