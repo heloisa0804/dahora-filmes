@@ -2,7 +2,17 @@
 
 Aplicativo desenvolvido utilizando React Native com Expo.
 
+---
+
 ## 04_telas-basicas-de-busca-e-resultados
+
+- Criação da versão básica das telas `Busca` e `Resultados`
+- Uso do estate para gerenciar o film digitado no camp de entrada
+- Validação básica usando `Alert` e ``Vibration`
+- Navegação via programação com `useRouter`+ passagem de parâmetros
+- Acesso aos parâmetros de rota com `useLocalSearchParams`
+
+---
 
 ## 03_navegacao-expo-router-e-telas-privacidade-sobre
 
@@ -12,6 +22,8 @@ Aplicativo desenvolvido utilizando React Native com Expo.
 - Migração do conteúdo/estrutura do `App.tsx` para o `layout.tsx` e para as páginas correspondentes (index, privacidade e sobre)
 - Configuração das rotas usando componente `Link` do expo-router
 - Uso do componente `ScrollView` para telas com barra de rolagem
+
+---
 
 ## 02_mais-estilos-logo-font-icones-pressable
 
