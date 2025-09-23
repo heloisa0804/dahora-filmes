@@ -2,6 +2,8 @@
 
 Aplicativo desenvolvido utilizando React Native com Expo.
 
+## 04_telas-basicas-de-busca-e-resultados
+
 ## 03_navegacao-expo-router-e-telas-privacidade-sobre
 
 - Instalação da lib `expo-router` e suas dependências
