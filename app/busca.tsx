@@ -11,11 +11,14 @@ import {
 
 // @ts-ignore
 import { Ionicons } from "@expo/vector-icons";
-import { Stack } from "expo-router";
+import { Stack, useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useState } from "react";
 
 export default function Busca() {
+  // Hook para navegação através de programação usando router
+  const router = useRouter();
+
   //Hook para armazenar o filme digitado pelo usuário
   const [filme, setFilme] = useState<string>("");
 
@@ -24,6 +27,9 @@ export default function Busca() {
       Vibration.vibrate();
       return Alert.alert("Ops!", "Você deve digitar um filme");
     }
+
+    //Navega para tela de resultados
+    router.push("/resultados");
   };
 
   return (
@@ -51,7 +57,7 @@ export default function Busca() {
             onSubmitEditing={buscarFilmes}
           />
         </View>
-        <Button title="Procurar" color="#5451a6" />
+        <Button title="Procurar" color="#5451a6" onPress={buscarFilmes} />
       </SafeAreaView>
     </>
   );
