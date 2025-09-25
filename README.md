@@ -4,6 +4,10 @@ Aplicativo desenvolvido utilizando React Native com Expo.
 
 ---
 
+## 07_detalhes-do-filme
+
+---
+
 ## 06_finalizacao-do-resultado-e-componentes-adicionais
 
 - Definindo alias/apelido para os caminhos (tsconfig.json)
