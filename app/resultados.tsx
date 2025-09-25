@@ -59,6 +59,7 @@ export default function Resultados() {
             data={resultados}
             keyExtractor={(item) => item.id.toString()}
             renderItem={({ item }) => <Text>{item.title}</Text>}
+            ListEmptyComponent={<Text>Nenhum filme encontrado</Text>}
           />
         )}
       </SafeAreaView>
