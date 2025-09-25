@@ -4,6 +4,8 @@ Aplicativo desenvolvido utilizando React Native com Expo.
 
 ---
 
+## 06_finalizacao-do-resultado-e-componentes-adicionais
+
 ## 05_uso-da-api-com-config-env
 
 - Cadastro no TheMovieDB para obter a API key
