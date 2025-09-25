@@ -8,7 +8,6 @@ import { CardFilmeProps } from "../types";
 export default function CardFilme({ filme }: CardFilmeProps) {
   // Extrando cada prop de dentro do filme
   const { id, title, poster_path } = filme;
-  console.log(id, title, poster_path);
 
   return (
     <View style={estilos.card}>
