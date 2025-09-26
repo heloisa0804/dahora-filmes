@@ -6,6 +6,13 @@ Aplicativo desenvolvido utilizando React Native com Expo.
 
 ## 07_detalhes-do-filme
 
+- Criação de rota dinâmica: `app/detalhes/[id].tsx`
+- Adiciona os dados do filme como string para o parâmetros da rota de detalhes
+- Em detalhes, captura o filme como string e converte para o objeto
+- Exibe os dados do filme nos componentes
+- Formata a data e ajusta lógica para exibir "Não disponivel"
+  quando não tiver data e sinopse
+
 ---
 
 ## 06_finalizacao-do-resultado-e-componentes-adicionais
