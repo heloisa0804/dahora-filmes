@@ -9,7 +9,7 @@ import { useRouter } from "expo-router";
 
 export default function CardFilme({ filme }: CardFilmeProps) {
   // Extrando cada prop de dentro do filme
-  const { id, title, poster_path } = filme;
+  const { title, poster_path } = filme;
 
   // Importando o router para permitir a navegação através de programação
   const router = useRouter();
@@ -17,6 +17,11 @@ export default function CardFilme({ filme }: CardFilmeProps) {
   const leiaMais = () => {
     router.push({
       pathname: "/detalhes/[id]",
+      params: {
+        // Convertemos o filme completo para string/json
+        //enviamos como parâmetros para a rota de detalhes
+        filme: JSON.stringify(filme),
+      },
     });
   };
 
