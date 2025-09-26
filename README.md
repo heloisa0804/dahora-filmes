@@ -4,6 +4,10 @@ Aplicativo desenvolvido utilizando React Native com Expo.
 
 ---
 
+## 08_gerenciamento-de-favoritos
+
+---
+
 ## 07_detalhes-do-filme
 
 - Criação de rota dinâmica: `app/detalhes/[id].tsx`

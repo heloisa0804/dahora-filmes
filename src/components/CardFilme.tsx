@@ -1,11 +1,20 @@
 // src/components/CardFilme.tsx
-import { StyleSheet, Text, View, Pressable, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Pressable,
+  Image,
+  Vibration,
+  Alert,
+} from "react-native";
 
 // @ts-ignore
 import { Ionicons } from "@expo/vector-icons";
 import { CardFilmeProps } from "../types";
 import { useReducer } from "react";
 import { useRouter } from "expo-router";
+import { salvarFilmeFavorito } from "../services/storage-favoritos";
 
 export default function CardFilme({ filme }: CardFilmeProps) {
   // Extrando cada prop de dentro do filme
@@ -23,6 +32,22 @@ export default function CardFilme({ filme }: CardFilmeProps) {
         filme: JSON.stringify(filme),
       },
     });
+  };
+
+  const salvar = () => {
+    salvarFilmeFavorito(filme)
+      .then((salvou) => {
+        if (salvou) {
+          Alert.alert("Favoritos", "Filme salvo com sucesso");
+        } else {
+          Alert.alert("Favoritos", "Filme já esta nos  favoritos");
+          Vibration.vibrate();
+        }
+      })
+      .catch(() => {
+        Alert.alert("Ops", "Erro ao salvar. Tente novamente");
+        Vibration.vibrate(1000);
+      });
   };
 
   return (
@@ -46,7 +71,7 @@ export default function CardFilme({ filme }: CardFilmeProps) {
               <Ionicons name="book" size={12} /> Leia mais
             </Text>
           </Pressable>
-          <Pressable style={estilos.botao}>
+          <Pressable style={estilos.botao} onPress={salvar}>
             <Text style={estilos.textoBotao}>
               <Ionicons name="add-circle" size={12} /> Salvar
             </Text>
