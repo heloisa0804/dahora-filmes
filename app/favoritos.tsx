@@ -14,7 +14,10 @@ import { router, Stack } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { useEffect, useState } from "react";
 import { Filme, ItemDaListaDeFavoritos } from "@/src/types";
-import { buscarFavoritos } from "@/src/services/storage-favoritos";
+import {
+  buscarFavoritos,
+  removerFilmeFavorito,
+} from "@/src/services/storage-favoritos";
 import Loading from "@/src/components/Loading";
 
 export default function Favoritos() {
@@ -44,7 +47,11 @@ export default function Favoritos() {
       }}
     >
       <Text style={estilos.titulo}>{item.title}</Text>
-      <Pressable style={estilos.botaoLixeira}>
+      <Pressable
+        style={estilos.botaoLixeira}
+        // Ao chamar uma função (NO CASO,removerFilme)que necessite de parâmetros (no caso, item.id), obrigatoriamente, a prop de evento (onPress) deve usar a sintaxe com arrow functionm
+        onPress={() => removerFilme(item.id)}
+      >
         <Ionicons name="trash" size={24} color="#888" />
       </Pressable>
     </Pressable>
@@ -57,6 +64,18 @@ export default function Favoritos() {
       </Text>
     </View>
   );
+  const removerFilme = async (id: number) => {
+    try {
+      await removerFilmeFavorito(id);
+
+      const lista = await buscarFavoritos();
+
+      setFavoritos(lista);
+    } catch (error) {
+      console.error(error);
+      Alert.alert("Erro", "Não foi possivel remover filme");
+    }
+  };
 
   return (
     <>
