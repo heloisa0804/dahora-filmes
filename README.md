@@ -6,6 +6,14 @@ Aplicativo desenvolvido utilizando React Native com Expo.
 
 ## 08_gerenciamento-de-favoritos
 
+- Instalação da lib `AyncStorage`
+- Criação da tela de favoritos (básica)
+- Criação do service `storage-favoritos` com funções de manipulação do Storage ( armazenamento físico no aparelho)
+- Carregamento dos dados com auxílio do useEffect
+- Exbição em FlatList
+- Uso de funções intermediárias em favoritos.tsx para acionar as funções do storage para salvar, apagar, apagarTudo.
+- Uso de Alert com botões Sim e Não para apagar todos os favoritos
+
 ---
 
 ## 07_detalhes-do-filme
