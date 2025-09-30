@@ -15,6 +15,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { useEffect, useState } from "react";
 import { Filme, ItemDaListaDeFavoritos } from "@/src/types";
 import {
+  apagarTodosFavoritos,
   buscarFavoritos,
   removerFilmeFavorito,
 } from "@/src/services/storage-favoritos";
@@ -80,7 +81,22 @@ export default function Favoritos() {
   const apagarTudo = () => {
     Alert.alert(
       " ❗Apagar todos os favoritos",
-      "Tem certeza que deseja apagar todos os filmes favoritos?"
+      "Tem certeza que deseja apagar todos os filmes favoritos?",
+      [
+        { text: "Não", style: "cancel" },
+        {
+          text: "Sim",
+          onPress: async () => {
+            try {
+              await apagarTodosFavoritos();
+              setFavoritos([]);
+            } catch (error) {
+              console.error(error);
+              Alert.alert("Erro", "Não foi possivel apagar os favoritos");
+            }
+          },
+        },
+      ]
     );
   };
 
