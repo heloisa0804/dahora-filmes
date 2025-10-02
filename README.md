@@ -4,6 +4,8 @@ Aplicativo desenvolvido utilizando React Native com Expo.
 
 ---
 
+## 09_build-usando-expo-eas
+
 ## 08_gerenciamento-de-favoritos
 
 - Instalação da lib `AyncStorage`
