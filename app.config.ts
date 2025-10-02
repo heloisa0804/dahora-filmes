@@ -7,6 +7,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
   name: "DáHora Filmes",
   slug: "dahora-filmes",
+  owner: "helo0804", //Necessário para o eas
   scheme: "dahora-filmes",
   version: "1.0.0",
   orientation: "portrait",
