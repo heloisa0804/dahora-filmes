@@ -3,7 +3,6 @@ import { FilmeDetalhes, ParametrosDetalhes } from "@/src/types";
 import { formatarData } from "@/src/ultils";
 import { Stack, useLocalSearchParams } from "expo-router";
 import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Detalhes() {
   // Capturando os dados do filme completo via params e em formato de string/json
@@ -23,7 +22,7 @@ export default function Detalhes() {
         }}
       />
 
-      <SafeAreaView style={estilos.container}>
+      <View style={estilos.container}>
         <ScrollView>
           <View style={estilos.imagemContainer}>
             <Image
@@ -53,7 +52,7 @@ export default function Detalhes() {
             </Text>
           </View>
         </ScrollView>
-      </SafeAreaView>
+      </View>
     </>
   );
 }

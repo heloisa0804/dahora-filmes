@@ -39,7 +39,7 @@ export default function Busca() {
           headerTitle: "Busca de Filmes",
         }}
       />
-      <SafeAreaView style={estilos.container}>
+      <View style={estilos.container}>
         <Text style={estilos.texto}>
           Star Trek? O Poderoso Chefão? A trilogia Senhor dos Anéis?
         </Text>
@@ -58,7 +58,7 @@ export default function Busca() {
           />
         </View>
         <Button title="Procurar" color="#5451a6" onPress={buscarFilmes} />
-      </SafeAreaView>
+      </View>
     </>
   );
 }

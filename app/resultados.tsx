@@ -1,5 +1,5 @@
 // app/resultados.tsx
-import { FlatList, StyleSheet, Text } from "react-native";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Stack, useLocalSearchParams } from "expo-router";
 import { Filme, ParametrosBusca } from "@/src/types";
@@ -50,7 +50,7 @@ export default function Resultados() {
         }}
       />
 
-      <SafeAreaView style={estilos.container}>
+      <View style={estilos.container}>
         <Text style={estilos.texto}>
           Você buscou por: <Text style={estilos.termo}>{filme}</Text>
         </Text>
@@ -67,7 +67,7 @@ export default function Resultados() {
             ListEmptyComponent={ItemVazio}
           />
         )}
-      </SafeAreaView>
+      </View>
     </>
   );
 }
